@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>МедЦентр — Лечение зависимостей</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <div class="logo">
+        <svg class="logo__icon" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#1a73e8"/>
+          <rect x="15" y="7" width="6" height="22" rx="3" fill="white"/>
+          <rect x="7" y="15" width="22" height="6" rx="3" fill="white"/>
+        </svg>
+        <span class="logo__text">МедПомощь</span>
+      </div>
+      <a href="tel:+380800000000" class="nav__phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.13 1.18 2 2 0 012.12 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+        </svg>
+        +380 800 000 000
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <span class="hero__badge">Анонимно · Круглосуточно · С выездом</span>
+        <h1 class="hero__title">Профессиональная помощь при алкогольной и&nbsp;наркотической интоксикации</h1>
+        <p class="hero__sub">Срочный выезд врача в течение 30 минут. Конфиденциально и безопасно.</p>
+        <div class="hero__actions">
+          <a href="tel:+380800000000" class="btn btn--primary btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.13 1.18 2 2 0 012.12 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+            </svg>
+            Позвонить
+          </a>
+          <a href="#contact" class="btn btn--outline btn--lg">Получить консультацию</a>
+        </div>
+      </div>
+      <div class="hero__visual reveal reveal--right">
+        <svg class="hero__img" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="210" cy="190" r="180" fill="#e8f0fe" opacity="0.5"/>
+          <circle cx="210" cy="190" r="130" fill="#c5d8fc" opacity="0.4"/>
+          <rect x="130" y="100" width="160" height="210" rx="24" fill="white" stroke="#d0e3ff" stroke-width="1.5"/>
+          <rect x="155" y="130" width="110" height="8" rx="4" fill="#1a73e8" opacity="0.15"/>
+          <rect x="155" y="148" width="78" height="8" rx="4" fill="#1a73e8" opacity="0.1"/>
+          <rect x="145" y="176" width="130" height="60" rx="12" fill="#eaf3ff"/>
+          <rect x="188" y="190" width="6" height="32" rx="3" fill="#1a73e8"/>
+          <rect x="177" y="201" width="28" height="6" rx="3" fill="#1a73e8"/>
+          <circle cx="211" cy="265" r="6" fill="#34a853" opacity="0.7"/>
+          <rect x="155" y="284" width="110" height="8" rx="4" fill="#1a73e8" opacity="0.12"/>
+          <circle cx="110" cy="140" r="28" fill="#34a853" opacity="0.12"/>
+          <path d="M100 140h20M110 130v20" stroke="#34a853" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="315" cy="255" r="22" fill="#1a73e8" opacity="0.1"/>
+          <path d="M308 255a7 7 0 1 0 14 0 7 7 0 0 0-14 0M315 248v3M315 264v-4M308 255h-4M327 255h-4" stroke="#1a73e8" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Наши услуги</h2>
+        <p class="section-sub">Квалифицированная медицинская помощь в любое время</p>
+      </div>
+      <div class="services__grid">
+
+        <div class="card reveal">
+          <div class="card__icon card__icon--blue">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Вывод из запоя</h3>
+          <p class="card__desc">Безопасная детоксикация на дому или в стационаре</p>
+        </div>
+
+        <div class="card reveal reveal--delay1">
+          <div class="card__icon card__icon--teal">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19.7 14a6.9 6.9 0 0 0 .3-2A7 7 0 0 0 5 7.2M4.3 10A6.9 6.9 0 0 0 4 12a7 7 0 0 0 14.8 2.7M12 2v3M22 8l-3 1M2 8l3 1"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Алкогольная интоксикация</h3>
+          <p class="card__desc">Капельницы, медикаментозная поддержка, восстановление</p>
+        </div>
+
+        <div class="card reveal reveal--delay2">
+          <div class="card__icon card__icon--green">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+              <line x1="12" y1="11" x2="12" y2="17"/>
+              <line x1="9" y1="14" x2="15" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Наркотическая интоксикация</h3>
+          <p class="card__desc">Экстренная помощь, детокс, стабилизация состояния</p>
+        </div>
+
+        <div class="card reveal reveal--delay3">
+          <div class="card__icon card__icon--indigo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Консультация нарколога</h3>
+          <p class="card__desc">Индивидуальный план лечения и долгосрочная поддержка</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Почему выбирают нас</h2>
+      </div>
+      <div class="why__grid">
+        <div class="why__item reveal">
+          <div class="why__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Анонимно</h3>
+          <p>Полная конфиденциальность. Никаких записей без вашего согласия.</p>
+        </div>
+        <div class="why__item reveal reveal--delay1">
+          <div class="why__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Круглосуточно</h3>
+          <p>Принимаем звонки и выезжаем 24/7, включая праздники.</p>
+        </div>
+        <div class="why__item reveal reveal--delay2">
+          <div class="why__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <h3>Выезд врача</h3>
+          <p>Прибытие врача в течение 30–60 минут по вашему адресу.</p>
+        </div>
+        <div class="why__item reveal reveal--delay3">
+          <div class="why__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Опытные специалисты</h3>
+          <p>Врачи с многолетней практикой в наркологии и психиатрии.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <h2 class="section-title">Свяжитесь с нами</h2>
+          <p class="contact__sub">Мы готовы помочь прямо сейчас. Каждый звонок — анонимный.</p>
+          <div class="contact__phone">
+            <a href="tel:+380800000000" class="btn btn--primary btn--xl">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.13 1.18 2 2 0 012.12 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+              </svg>
+              +380 800 000 000
+            </a>
+          </div>
+          <div class="contact__details">
+            <div class="contact__row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>г. Харьков, ул. Медицинская, 12</span>
+            </div>
+            <div class="contact__row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span>Работаем круглосуточно</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact__map reveal reveal--right">
+          <div class="map-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <p>Карта</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="logo">
+        <svg class="logo__icon" width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#1a73e8"/>
+          <rect x="15" y="7" width="6" height="22" rx="3" fill="white"/>
+          <rect x="7" y="15" width="22" height="6" rx="3" fill="white"/>
+        </svg>
+        <span class="logo__text logo__text--light">МедПомощь</span>
+      </div>
+      <p class="footer__copy">© 2024 МедПомощь. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
