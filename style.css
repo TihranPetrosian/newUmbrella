@@ -40,6 +40,27 @@ body {
   overflow-x: hidden;
 }
 
+.hero__visual {
+    position: relative;
+    display: inline-block;
+}
+
+.bg {
+    display: block;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+
+    /* при необходимости */
+    width: 60%;
+    z-index: 2;
+}
+
 .container {
   max-width: 1160px;
   margin: 0 auto;
@@ -99,7 +120,7 @@ body {
 .btn--primary:active { transform: translateY(0); }
 
 .btn--outline {
-  background: transparent;
+  background: var(--blue-light);
   color: var(--blue);
   padding: 14px 28px;
   border: 2px solid var(--blue);
@@ -192,8 +213,6 @@ body {
 .hero__inner {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 64px;
   min-height: calc(100vh - 160px);
@@ -238,10 +257,28 @@ body {
 }
 
 .hero__visual {
+  position: relative; /* нужно только для бейджа */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
+
+/* бейдж остаётся поверх картинки, сверху */
+.hero__visual .hero__badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 3;
+  margin-bottom: 0;
+}
+
+/* кнопки — под картинкой, в обычном потоке */
+.hero__visual .hero__actions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .hero__img {
   width: 100%;
   max-width: 420px;
@@ -251,7 +288,6 @@ body {
 
 .hero__visual img {
   width: 100%;
-  max-width: 420px;
   height: auto;
   display: block;
   /*border-radius: var(--radius-xl);*/
@@ -264,29 +300,6 @@ body {
   50%       { transform: translateY(-14px); }
 }
 
-.hero__scroll {
-  position: absolute;
-  bottom: 32px; left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-.hero__scroll span {
-  display: block;
-  width: 24px; height: 38px;
-  border: 2px solid rgba(26,115,232,0.4);
-  border-radius: 12px;
-  position: relative;
-}
-.hero__scroll span::after {
-  content: '';
-  position: absolute;
-  top: 6px; left: 50%;
-  transform: translateX(-50%);
-  width: 4px; height: 8px;
-  background: var(--blue);
-  border-radius: 2px;
-  animation: scroll-dot 2s infinite;
-}
 @keyframes scroll-dot {
   0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
   100% { opacity: 0; transform: translateX(-50%) translateY(14px); }
@@ -507,14 +520,34 @@ body {
    ============================================================ */
 @media (max-width: 900px) {
   .hero__inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
-    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
-  .hero__content { max-width: 100%; }
-  .hero__actions { justify-content: center; }
-  .hero__visual { order: -1; }
+
+  .hero__content {
+    display: contents; /* badge и actions выходят на уровень hero__inner */
+  }
+
+  .hero__badge {
+    order: 1;
+    align-self: center; /* или flex-start, если нужно слева */
+    margin-bottom: 0;
+  }
+
+  .hero__visual {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero__visual .bg {
+    width: 100%;
+  }
+
+  .hero__actions {
+    order: 3;
+    justify-content: center;
+  }
   .hero__img { max-width: 280px; }
   /*.hero__visual img { max-width: 280px; margin: 0 auto; }*/
 
