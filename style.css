@@ -454,6 +454,19 @@ body {
   font-weight: 500;
 }
 
+.map-real {
+  height: 300px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden; /* чтобы скругление работало и для карты */
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 10px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */

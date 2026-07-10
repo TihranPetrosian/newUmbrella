@@ -47,3 +47,40 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+const cities = [
+  { name: "Харків",   coords: [49.9935, 36.2304] },
+  { name: "Одеса",    coords: [46.4825, 30.7233] },
+  { name: "Черкаси",  coords: [49.4444, 32.0598] },
+  { name: "Київ",     coords: [50.4501, 30.5234] },
+];
+
+// Центр карты — примерно по центру между городами
+const map = L.map('map', {
+  scrollWheelZoom: false, // чтобы карта не мешала скроллу страницы
+}).setView([48.5, 33.0], 5.3);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors',
+  maxZoom: 18,
+}).addTo(map);
+
+// Кастомная синяя иконка под стиль сайта
+const blueIcon = L.divIcon({
+  className: 'custom-marker',
+  html: `<div style="
+      width: 18px; height: 18px;
+      background:#1a73e8;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(26,115,232,0.5);
+  "></div>`,
+  iconSize: [18, 18],
+  iconAnchor: [9, 9],
+});
+
+cities.forEach(city => {
+  L.marker(city.coords, { icon: blueIcon })
+    .addTo(map)
+    .bindPopup(`<b>${city.name}</b><br>Виїзд лікаря доступний`);
+});
