@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>МедЦентр — Лечение зависимостей</title>
+  <title data-uk="МедЦентр — Лікування залежностей" data-ru="МедЦентр — Лечение зависимостей">МедЦентр — Лікування залежностей</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,12 +24,20 @@
         </svg>
         <span class="logo__text">МедДопомога</span>
       </div>
-      <a href="tel:+380800000000" class="nav__phone">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.13 1.18 2 2 0 012.12 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
-        </svg>
-        +380 800 000 000
-      </a>
+
+      <div class="nav__right">
+        <div class="lang-switch" id="langSwitch">
+          <button type="button" class="lang-switch__btn is-active" data-lang="uk">UA</button>
+          <button type="button" class="lang-switch__btn" data-lang="ru">RU</button>
+        </div>
+
+        <a href="tel:+380800000000" class="nav__phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.13 1.18 2 2 0 012.12 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+          </svg>
+          +380 800 000 000
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -39,25 +47,25 @@
     <div class="container hero__inner">
 
       <!-- Этот h1 виден ТОЛЬКО на мобильном, над картинкой -->
-      <h1 class="hero__title hero__title--mobile-top">
-        Доступна допомога нарколога<br>При алкогольній та наркотичній залежності
-      </h1>
+      <h1 class="hero__title hero__title--mobile-top"
+          data-uk="Доступна допомога нарколога<br>При алкогольній та наркотичній залежності"
+          data-ru="Доступна помощь нарколога<br>При алкогольной и наркотической зависимости">Доступна допомога нарколога<br>При алкогольній та наркотичній залежності</h1>
 
       <div class="hero__content reveal visible">
-        <span class="hero__badge">Доступно · Анонімно · З виїздом додому</span>
+        <span class="hero__badge" data-uk="Доступно · Анонімно · З виїздом додому" data-ru="Доступно · Анонимно · С выездом на дом">Доступно · Анонімно · З виїздом додому</span>
 
         <!-- Этот h1 виден ТОЛЬКО на десктопе, внутри левой колонки -->
-        <h1 class="hero__title hero__title--desktop">
-          Доступна допомога нарколога<br>При алкогольній та наркотичній залежності
-        </h1>
+        <h1 class="hero__title hero__title--desktop"
+            data-uk="Доступна допомога нарколога<br>При алкогольній та наркотичній залежності"
+            data-ru="Доступна помощь нарколога<br>При алкогольной и наркотической зависимости">Доступна допомога нарколога<br>При алкогольній та наркотичній залежності</h1>
 
-        <p class="hero__sub">Терміновий виїзд лікаря протягом 30 хвилин. Конфіденційно та безпечно.</p>
+        <p class="hero__sub" data-uk="Терміновий виїзд лікаря протягом 30 хвилин. Конфіденційно та безпечно." data-ru="Срочный выезд врача в течение 30 минут. Конфиденциально и безопасно.">Терміновий виїзд лікаря протягом 30 хвилин. Конфіденційно та безпечно.</p>
         <div class="hero__actions">
           <a href="tel:+380800000000" class="btn btn--primary btn--lg">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.13 1.18 2 2 0 012.12 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"></path>
             </svg>
-            Подзвонити лікарю
+            <span data-uk="Подзвонити лікарю" data-ru="Позвонить врачу">Подзвонити лікарю</span>
           </a>
         </div>
       </div>
@@ -73,39 +81,29 @@
   <section class="services" id="services">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title">Наши услуги</h2>
-        <p class="section-sub">Квалифицированная медицинская помощь в любое время</p>
+        <h2 class="section-title" data-uk="Наші послуги" data-ru="Наши услуги">Наші послуги</h2>
+        <p class="section-sub" data-uk="Кваліфікована медична допомога в будь-який час" data-ru="Квалифицированная медицинская помощь в любое время">Кваліфікована медична допомога в будь-який час</p>
       </div>
       <div class="services__grid">
 
-<!--        <div class="card reveal">-->
-<!--          <div class="card__icon card__icon&#45;&#45;blue">-->
-<!--            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">-->
-<!--              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>-->
-<!--            </svg>-->
-<!--          </div>-->
-<!--          <h3 class="card__title">Вывод из запоя</h3>-->
-<!--          <p class="card__desc">Безопасная детоксикация на дому или в стационаре</p>-->
-<!--        </div>-->
-
         <div class="card card--bg bg--img reveal visible">
-          <h3 class="card__title">Вывод из запоя</h3>
-          <p class="card__desc">Безопасная детоксикация на дому или в стационаре</p>
+          <h3 class="card__title" data-uk="Виведення із запою" data-ru="Вывод из запоя">Виведення із запою</h3>
+          <p class="card__desc" data-uk="Безпечна детоксикація вдома або в стаціонарі" data-ru="Безопасная детоксикация на дому или в стационаре">Безпечна детоксикація вдома або в стаціонарі</p>
         </div>
 
         <div class="card reveal card--bg bg--img1 reveal--delay1">
-          <h3 class="card__title">Алкогольная интоксикация</h3>
-          <p class="card__desc">Капельницы, медикаментозная поддержка, восстановление</p>
+          <h3 class="card__title" data-uk="Алкогольна інтоксикація" data-ru="Алкогольная интоксикация">Алкогольна інтоксикація</h3>
+          <p class="card__desc" data-uk="Крапельниці, медикаментозна підтримка, відновлення" data-ru="Капельницы, медикаментозная поддержка, восстановление">Крапельниці, медикаментозна підтримка, відновлення</p>
         </div>
 
         <div class="card reveal card--bg bg--img2 reveal--delay2">
-          <h3 class="card__title">Наркотическая интоксикация</h3>
-          <p class="card__desc">Экстренная помощь, детокс, стабилизация состояния</p>
+          <h3 class="card__title" data-uk="Наркотична інтоксикація" data-ru="Наркотическая интоксикация">Наркотична інтоксикація</h3>
+          <p class="card__desc" data-uk="Невідкладна допомога, детокс, стабілізація стану" data-ru="Экстренная помощь, детокс, стабилизация состояния">Невідкладна допомога, детокс, стабілізація стану</p>
         </div>
 
         <div class="card reveal card--bg bg--img3 reveal--delay3">
-          <h3 class="card__title">Консультация нарколога</h3>
-          <p class="card__desc">Индивидуальный план лечения и долгосрочная поддержка</p>
+          <h3 class="card__title" data-uk="Консультація нарколога" data-ru="Консультация нарколога">Консультація нарколога</h3>
+          <p class="card__desc" data-uk="Індивідуальний план лікування та довгострокова підтримка" data-ru="Индивидуальный план лечения и долгосрочная поддержка">Індивідуальний план лікування та довгострокова підтримка</p>
         </div>
 
       </div>
@@ -116,7 +114,7 @@
   <section class="why">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title">Почему выбирают нас</h2>
+        <h2 class="section-title" data-uk="Чому обирають нас" data-ru="Почему выбирают нас">Чому обирають нас</h2>
       </div>
       <div class="why__grid">
         <div class="why__item reveal">
@@ -126,8 +124,8 @@
               <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
             </svg>
           </div>
-          <h3>Анонимно</h3>
-          <p>Полная конфиденциальность. Никаких записей без вашего согласия.</p>
+          <h3 data-uk="Анонімно" data-ru="Анонимно">Анонімно</h3>
+          <p data-uk="Повна конфіденційність. Жодних записів без вашої згоди." data-ru="Полная конфиденциальность. Никаких записей без вашего согласия.">Повна конфіденційність. Жодних записів без вашої згоди.</p>
         </div>
         <div class="why__item reveal reveal--delay1">
           <div class="why__icon">
@@ -136,8 +134,8 @@
               <polyline points="12 6 12 12 16 14"/>
             </svg>
           </div>
-          <h3>Круглосуточно</h3>
-          <p>Принимаем звонки и выезжаем 24/7, включая праздники.</p>
+          <h3 data-uk="Цілодобово" data-ru="Круглосуточно">Цілодобово</h3>
+          <p data-uk="Приймаємо дзвінки та виїжджаємо 24/7, включно зі святами." data-ru="Принимаем звонки и выезжаем 24/7, включая праздники.">Приймаємо дзвінки та виїжджаємо 24/7, включно зі святами.</p>
         </div>
         <div class="why__item reveal reveal--delay2">
           <div class="why__icon">
@@ -147,8 +145,8 @@
               <circle cx="18.5" cy="18.5" r="2.5"/>
             </svg>
           </div>
-          <h3>Выезд врача</h3>
-          <p>Прибытие врача в течение 30–60 минут по вашему адресу.</p>
+          <h3 data-uk="Виїзд лікаря" data-ru="Выезд врача">Виїзд лікаря</h3>
+          <p data-uk="Прибуття лікаря протягом 30–60 хвилин за вашою адресою." data-ru="Прибытие врача в течение 30–60 минут по вашему адресу.">Прибуття лікаря протягом 30–60 хвилин за вашою адресою.</p>
         </div>
         <div class="why__item reveal reveal--delay3">
           <div class="why__icon">
@@ -157,8 +155,8 @@
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
           </div>
-          <h3>Опытные специалисты</h3>
-          <p>Врачи с многолетней практикой в наркологии и психиатрии.</p>
+          <h3 data-uk="Досвідчені фахівці" data-ru="Опытные специалисты">Досвідчені фахівці</h3>
+          <p data-uk="Лікарі з багаторічною практикою в наркології та психіатрії." data-ru="Врачи с многолетней практикой в наркологии и психиатрии.">Лікарі з багаторічною практикою в наркології та психіатрії.</p>
         </div>
       </div>
     </div>
@@ -169,8 +167,8 @@
     <div class="container">
       <div class="contact__grid">
         <div class="contact__info reveal">
-          <h2 class="section-title">Свяжитесь с нами</h2>
-          <p class="contact__sub">Мы готовы помочь прямо сейчас. Каждый звонок — анонимный.</p>
+          <h2 class="section-title" data-uk="Зв'яжіться з нами" data-ru="Свяжитесь с нами">Зв'яжіться з нами</h2>
+          <p class="contact__sub" data-uk="Ми готові допомогти прямо зараз. Кожен дзвінок — анонімний." data-ru="Мы готовы помочь прямо сейчас. Каждый звонок — анонимный.">Ми готові допомогти прямо зараз. Кожен дзвінок — анонімний.</p>
           <div class="contact__phone">
             <a href="tel:+380800000000" class="btn btn--primary btn--xl">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -185,16 +183,16 @@
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                 <circle cx="12" cy="10" r="3"/>
               </svg>
-              <span>Харьков</span>
-              <span>Киев</span>
-              <span>Одесса</span>
-              <span>Черкассы</span>
+              <span data-uk="Харків" data-ru="Харьков">Харків</span>
+              <span data-uk="Київ" data-ru="Киев">Київ</span>
+              <span data-uk="Одеса" data-ru="Одесса">Одеса</span>
+              <span data-uk="Черкаси" data-ru="Черкассы">Черкаси</span>
             </div>
             <div class="contact__row">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.13 1.18 2 2 0 012.12 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
               </svg>
-              <span>Адрес скорой наркологической помощи узнавайте по телефону</span>
+              <span data-uk="Адресу невідкладної наркологічної допомоги дізнавайтесь за телефоном" data-ru="Адрес скорой наркологической помощи узнавайте по телефону">Адресу невідкладної наркологічної допомоги дізнавайтесь за телефоном</span>
             </div>
           </div>
         </div>
@@ -214,9 +212,9 @@
           <rect x="15" y="7" width="6" height="22" rx="3" fill="white"/>
           <rect x="7" y="15" width="22" height="6" rx="3" fill="white"/>
         </svg>
-        <span class="logo__text logo__text--light">МедПомощь</span>
+        <span class="logo__text logo__text--light">МедДопомога</span>
       </div>
-      <p class="footer__copy">© 2024 МедПомощь. Все права защищены.</p>
+      <p class="footer__copy" data-uk="© 2024 МедДопомога. Усі права захищені." data-ru="© 2024 МедДопомога. Все права защищены.">© 2024 МедДопомога. Усі права захищені.</p>
     </div>
   </footer>
 

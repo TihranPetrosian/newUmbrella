@@ -48,6 +48,60 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+/* ============================================================
+   LANGUAGE SWITCH (UA / RU)
+   ============================================================ */
+(function () {
+  const STORAGE_KEY = 'site-lang';
+  const DEFAULT_LANG = 'uk';
+
+  const switchEl = document.getElementById('langSwitch');
+  if (!switchEl) return;
+
+  const buttons = switchEl.querySelectorAll('.lang-switch__btn');
+  // Все элементы, у которых есть перевод на оба языка
+  const translatable = document.querySelectorAll('[data-uk][data-ru]');
+
+  function applyLang(lang) {
+    translatable.forEach((el) => {
+      const value = el.getAttribute('data-' + lang);
+      if (value == null) return;
+      // используем innerHTML, т.к. в некоторых текстах есть <br>
+      el.innerHTML = value;
+    });
+
+    document.documentElement.setAttribute('lang', lang);
+
+    buttons.forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.lang === lang);
+    });
+
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch (e) {
+      /* localStorage может быть недоступен (приватный режим и т.п.) — просто игнорируем */
+    }
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  let savedLang = DEFAULT_LANG;
+  try {
+    savedLang = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+  } catch (e) {
+    savedLang = DEFAULT_LANG;
+  }
+
+  if (savedLang !== DEFAULT_LANG) {
+    applyLang(savedLang);
+  }
+})();
+
+/* ============================================================
+   MAP
+   ============================================================ */
 const cities = [
   { name: "Харків",   coords: [49.9935, 36.2304] },
   { name: "Одеса",    coords: [46.4825, 30.7233] },
@@ -55,9 +109,8 @@ const cities = [
   { name: "Київ",     coords: [50.4501, 30.5234] },
 ];
 
-// Центр карты — примерно по центру между городами
 const map = L.map('map', {
-  scrollWheelZoom: false, // чтобы карта не мешала скроллу страницы
+  scrollWheelZoom: false,
 }).setView([48.5, 33.0], 5.3);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -65,7 +118,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
 }).addTo(map);
 
-// Кастомная синяя иконка под стиль сайта
 const blueIcon = L.divIcon({
   className: 'custom-marker',
   html: `<div style="
