@@ -62,12 +62,21 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   // Все элементы, у которых есть перевод на оба языка
   const translatable = document.querySelectorAll('[data-uk][data-ru]');
 
+  const translatableImages = document.querySelectorAll('[data-uk-src][data-ru-src]');
+
   function applyLang(lang) {
     translatable.forEach((el) => {
       const value = el.getAttribute('data-' + lang);
       if (value == null) return;
       // используем innerHTML, т.к. в некоторых текстах есть <br>
       el.innerHTML = value;
+    });
+
+    translatableImages.forEach((img) => {
+      const src = img.getAttribute('data-' + lang + '-src');
+      const alt = img.getAttribute('data-' + lang + '-alt');
+      if (src) img.src = src;
+      if (alt != null) img.alt = alt;
     });
 
     document.documentElement.setAttribute('lang', lang);
