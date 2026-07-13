@@ -555,7 +555,6 @@ body {
   .hero__inner {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 24px;
     min-height: auto;
   }
 
