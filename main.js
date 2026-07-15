@@ -5,15 +5,15 @@
   const revealEls = document.querySelectorAll('.reveal');
 
   const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
   );
 
   revealEls.forEach((el) => observer.observe(el));
@@ -142,6 +142,6 @@ const blueIcon = L.divIcon({
 
 cities.forEach(city => {
   L.marker(city.coords, { icon: blueIcon })
-    .addTo(map)
-    .bindPopup(`<b>${city.name}</b><br>Виїзд лікаря доступний`);
+      .addTo(map)
+      .bindPopup(`<b>${city.name}</b><br>Виїзд лікаря доступний`);
 });

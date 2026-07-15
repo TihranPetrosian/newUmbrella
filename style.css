@@ -130,14 +130,34 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0; /* позволяет тексту сжиматься/переноситься вместо распирания флекс-контейнера */
 }
+.logo__icon { flex-shrink: 0; }
 .logo__text {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.3px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
 }
 .logo__text--light { color: #8aa4c8; }
+
+/* Верхняя строка — крупнее, основной акцент бренда */
+.logo__text-full-line1 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Нижняя строка — мельче и чуть приглушённая, подпись/уточнение */
+.logo__text-full-line2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.logo__text--light .logo__text-full-line2 { color: #5c7ba3; }
 
 .nav__phone {
   display: flex;
@@ -147,12 +167,14 @@ body {
   font-weight: 600;
   color: var(--blue);
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav__right {
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-shrink: 0;
 }
 
 .lang-switch {
@@ -553,6 +575,12 @@ body {
   .footer__inner { justify-content: center; text-align: center; }
 }
 
+/* Название центра длиннее старого лого — на этой ширине переключаем
+   на короткий вариант, чтобы шапка не переполнялась и не переносилась в 2 строки */
+@media (max-width: 700px) {
+  .logo__text { font-size: 16px; }
+}
+
 @media (max-width: 600px) {
   .container { padding: 0 24px; }
 
@@ -589,7 +617,7 @@ body {
 
   .nav__inner { height: 60px; padding: 0 12px; }
   .nav__phone { font-size: 13px; gap: 5px; }
-  .logo__text { font-size: 17px;}
+  .logo__text { font-size: 14px; }
   .logo__icon { width: 30px; height: 30px; }
   .logo { gap: 7px; }
   .nav__right { gap: 8px; }
@@ -620,12 +648,7 @@ body {
   }
   .nav__phone-text { display: none; }
 
-  .logo__text { font-size: 15px; }
-}
-
-@media (max-width: 360px) {
-  /* На совсем узких экранах прячем название бренда, оставляем только иконку */
-  .logo__text { display: none; }
+  .logo__text { font-size: 13px; }
 }
 
 @media (hover: hover) and (pointer: fine) {
