@@ -618,7 +618,7 @@ body {
   .nav__inner { height: 60px; padding: 0 12px; }
   .nav__phone { font-size: 13px; gap: 5px; }
   .logo__text { font-size: 14px; }
-  .logo__icon { width: 30px; height: 30px; }
+  .logo__icon { width: 40px; height: 40px; }
   .logo { gap: 7px; }
   .nav__right { gap: 8px; }
   .lang-switch__btn { padding: 5px 10px; font-size: 11px; }
