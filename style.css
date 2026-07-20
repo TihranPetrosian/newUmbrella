@@ -132,7 +132,11 @@ body {
   gap: 10px;
   min-width: 0; /* позволяет тексту сжиматься/переноситься вместо распирания флекс-контейнера */
 }
-.logo__icon { flex-shrink: 0; }
+.logo__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
 .logo__text {
   font-size: 19px;
   font-weight: 700;
