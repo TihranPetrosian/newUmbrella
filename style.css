@@ -131,6 +131,15 @@ body {
   align-items: center;
   gap: 10px;
   min-width: 0; /* позволяет тексту сжиматься/переноситься вместо распирания флекс-контейнера */
+  text-decoration: none;
+}
+
+a.logo {
+  text-decoration: none;
+}
+
+a.logo:hover {
+  text-decoration: none;
 }
 .logo__icon {
   flex-shrink: 0;
@@ -348,6 +357,18 @@ body {
   padding: 36px 28px;
   box-shadow: var(--shadow-sm);
   min-height: 220px;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.card {
+  cursor: pointer;
+}
+
+a.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .card__icon {
