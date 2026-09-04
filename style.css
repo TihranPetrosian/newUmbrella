@@ -190,6 +190,12 @@ a.logo:hover {
   flex-shrink: 0;
 }
 
+.nav__image {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
 .lang-switch {
   display: flex;
   align-items: center;
@@ -611,6 +617,10 @@ a.card:hover {
 
   .container.hero__inner {
     padding: 0;
+  }
+
+  .nav__image {
+    display: none;
   }
 
   .services, .why, .contact { padding: 60px 0; }
