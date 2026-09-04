@@ -715,4 +715,39 @@ a.card:hover {
     background: var(--blue);
     color: #fff;
   }
+
+  .floating-call-btn:hover {
+    background: var(--blue-dark);
+    transform: scale(1.05);
+  }
+}
+
+/* ============================================================
+   FLOATING CALL BUTTON (Mobile only)
+   ============================================================ */
+.floating-call-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: var(--blue);
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(26,115,232,0.4);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.floating-call-btn svg {
+  color: #fff;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .floating-call-btn {
+    display: flex;
+  }
 }

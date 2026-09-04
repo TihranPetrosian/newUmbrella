@@ -59,22 +59,25 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   if (!switchEl) return;
 
   const buttons = switchEl.querySelectorAll('.lang-switch__btn');
-  // Все элементы, у которых есть перевод на оба языка
   const translatable = document.querySelectorAll('[data-uk][data-ru]');
-
   const translatableImages = document.querySelectorAll('[data-uk-src][data-ru-src]');
 
-  function applyLang(lang) {
+  function applyLang(lang, saveToStorage = true) {
+    if (lang !== 'uk' && lang !== 'ru') {
+      lang = DEFAULT_LANG;
+    }
+
     translatable.forEach((el) => {
       const value = el.getAttribute('data-' + lang);
-      if (value == null) return;
-      // используем innerHTML, т.к. в некоторых текстах есть <br>
-      el.innerHTML = value;
+      if (value != null) {
+        el.innerHTML = value;
+      }
     });
 
     translatableImages.forEach((img) => {
       const src = img.getAttribute('data-' + lang + '-src');
       const alt = img.getAttribute('data-' + lang + '-alt');
+
       if (src) img.src = src;
       if (alt != null) img.alt = alt;
     });
@@ -85,29 +88,46 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       btn.classList.toggle('is-active', btn.dataset.lang === lang);
     });
 
-    try {
-      localStorage.setItem(STORAGE_KEY, lang);
-    } catch (e) {
-      /* localStorage может быть недоступен (приватный режим и т.п.) — просто игнорируем */
+    if (saveToStorage) {
+      try {
+        localStorage.setItem(STORAGE_KEY, lang);
+      } catch (e) {}
     }
   }
 
   buttons.forEach((btn) => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+
+      // Меняем язык на странице
+      applyLang(lang);
+
+      // Меняем URL на ?lang=uk или ?lang=ru
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+
+      window.history.replaceState({}, '', url);
+    });
   });
 
+  // Сначала смотрим язык в URL
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get('lang');
+
+  if (urlLang === 'uk' || urlLang === 'ru') {
+    applyLang(urlLang);
+    return;
+  }
+
+  // Если языка в URL нет — берём сохранённый
   let savedLang = DEFAULT_LANG;
+
   try {
     savedLang = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
-  } catch (e) {
-    savedLang = DEFAULT_LANG;
-  }
+  } catch (e) {}
 
-  if (savedLang !== DEFAULT_LANG) {
-    applyLang(savedLang);
-  }
+  applyLang(savedLang);
 })();
-
 /* ============================================================
    MAP
    ============================================================ */
